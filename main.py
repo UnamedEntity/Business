@@ -3,8 +3,6 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 from google import genai
 
-# Initialize Gemini client
-# Option 1: Set your API key directly (not recommended for production)
 API_KEY = "AIzaSyAmShMF_z9MqEEZKzw0e2N8hgSHiWGKYdA"
 
 
@@ -123,20 +121,20 @@ class EssayWriterGUI:
         )
         title_label.pack(pady=20)
         
-        # Main container
+     
         main_frame = tk.Frame(self.root, bg=self.bg_color)
         main_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
         
-        # Notebook for tabs
+       
         self.notebook = ttk.Notebook(main_frame)
         self.notebook.pack(fill=tk.BOTH, expand=True)
         
-        # Create tabs
+      
         self.create_grade_tab()
         self.create_category_tab()
         self.create_view_tab()
         
-        # Style configuration
+       
         style = ttk.Style()
         style.theme_use('clam')
         style.configure('TNotebook', background=self.bg_color)
@@ -146,7 +144,7 @@ class EssayWriterGUI:
         grade_frame = tk.Frame(self.notebook, bg="white")
         self.notebook.add(grade_frame, text="📝 Grade Essay")
         
-        # Instructions
+        
         inst_label = tk.Label(
             grade_frame,
             text="Enter your essay below and click 'Grade Essay' to receive AI feedback",
@@ -156,7 +154,7 @@ class EssayWriterGUI:
         )
         inst_label.pack(pady=10)
         
-        # Essay input
+       
         input_frame = tk.Frame(grade_frame, bg="white")
         input_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
         
@@ -178,7 +176,7 @@ class EssayWriterGUI:
         )
         self.essay_input.pack(fill=tk.BOTH, expand=True, pady=5)
         
-        # Grade button
+        
         grade_btn = tk.Button(
             grade_frame,
             text="🎯 Grade Essay",
@@ -193,7 +191,7 @@ class EssayWriterGUI:
         )
         grade_btn.pack(pady=10)
         
-        # Response output
+        
         output_frame = tk.Frame(grade_frame, bg="white")
         output_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
         
@@ -220,7 +218,7 @@ class EssayWriterGUI:
         category_frame = tk.Frame(self.notebook, bg="white")
         self.notebook.add(category_frame, text="➕ Add Category")
         
-        # Center form
+        
         form_frame = tk.Frame(category_frame, bg="white")
         form_frame.pack(expand=True, pady=50)
         
@@ -232,7 +230,7 @@ class EssayWriterGUI:
             fg=self.text_color
         ).grid(row=0, column=0, columnspan=2, pady=20)
         
-        # Category name
+       
         tk.Label(
             form_frame,
             text="Category Name:",
@@ -250,7 +248,7 @@ class EssayWriterGUI:
         )
         self.category_entry.grid(row=1, column=1, pady=10, padx=10)
         
-        # Description
+       
         tk.Label(
             form_frame,
             text="Description:",
@@ -269,7 +267,7 @@ class EssayWriterGUI:
         )
         self.description_text.grid(row=2, column=1, pady=10, padx=10)
         
-        # Add button
+       
         add_btn = tk.Button(
             form_frame,
             text="✅ Add Category",
@@ -288,7 +286,7 @@ class EssayWriterGUI:
         view_frame = tk.Frame(self.notebook, bg="white")
         self.notebook.add(view_frame, text="📚 View Categories")
         
-        # Toolbar
+       
         toolbar = tk.Frame(view_frame, bg="white")
         toolbar.pack(fill=tk.X, padx=20, pady=10)
         
@@ -320,11 +318,11 @@ class EssayWriterGUI:
         )
         delete_btn.pack(side=tk.LEFT, padx=5)
         
-        # Treeview for categories
+        
         tree_frame = tk.Frame(view_frame, bg="white")
         tree_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
         
-        # Scrollbar
+       
         tree_scroll = ttk.Scrollbar(tree_frame)
         tree_scroll.pack(side=tk.RIGHT, fill=tk.Y)
         
@@ -358,7 +356,7 @@ class EssayWriterGUI:
             messagebox.showwarning("Input Required", "Please enter an essay to grade.")
             return
         
-        # Search for relevant categories
+        
         results = search_knowledge(essay)
         context = ""
         if results:
