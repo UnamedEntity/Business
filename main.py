@@ -93,11 +93,11 @@ def delete_data(category):
 class EssayWriterGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("AI Essay Writer")
+        self.root.title("AI Essay Grader")
         self.root.geometry("900x700")
         self.root.configure(bg="#f0f0f0")
         
-        # Color scheme
+        
         self.primary_color = "#2c3e50"
         self.secondary_color = "#3498db"
         self.accent_color = "#e74c3c"
@@ -107,14 +107,14 @@ class EssayWriterGUI:
         self.create_widgets()
         
     def create_widgets(self):
-        # Header
+       
         header_frame = tk.Frame(self.root, bg=self.primary_color, height=80)
         header_frame.pack(fill=tk.X)
         header_frame.pack_propagate(False)
         
         title_label = tk.Label(
             header_frame,
-            text="✍️ AI Essay Writer",
+            text="✍️ AI Essay Grader",
             font=("Helvetica", 24, "bold"),
             bg=self.primary_color,
             fg="white"
