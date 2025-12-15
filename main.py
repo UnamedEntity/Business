@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 from google import genai
 
-API_KEY = "AIzaSyAmShMF_z9MqEEZKzw0e2N8hgSHiWGKYdA"
+API_KEY = "AIzaSyAgmuvrm_DVgoeQCYIXEwSOv-W0G_b7-_4"
 
 
 try:
@@ -93,7 +93,7 @@ def delete_data(category):
 class EssayWriterGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("AI Essay Grader")
+        self.root.title("Essay Ease Ai")
         self.root.geometry("900x700")
         self.root.configure(bg="#f0f0f0")
         
