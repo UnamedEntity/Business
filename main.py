@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 from google import genai
 
-API_KEY = "AIzaSyAgmuvrm_DVgoeQCYIXEwSOv-W0G_b7-_4"
+API_KEY = "YOur API KEy"
 
 
 try:
